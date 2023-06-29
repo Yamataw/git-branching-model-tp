@@ -98,3 +98,9 @@ footer {
 section {
     margin-bottom: 20px;
 }
+
+#my-element {
+    position: absolute;
+    top: 250px;
+    right: 50px;
+}
