@@ -41,8 +41,25 @@ function onClearError() {
     }
 
 }
+function convertToString(expressionObj) {
+    return `${expressionObj.expression};${expressionObj.result}`;
+}
 
+function generateCSV(){
+    if(results.length > 1) {
+        let headers = ['Expression', 'Result'];
+        let csvContent = headers.join(';') + '\n';
+        csvContent += results.map(convertToString).join('\n');
+        let blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        let url = URL.createObjectURL(blob);
+        let link = document.createElement('a');
+        link.href = url;
+        link.download = 'expressions.csv';
+        link.click();
+        URL.revokeObjectURL(url);
 
+    }
+}
 
 function appendToExpression(val){
     document.getElementById('expression').value += val
