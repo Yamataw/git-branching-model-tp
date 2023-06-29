@@ -94,4 +94,74 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+document.addEventListener('keydown', function(event) {
+    var keyPressed = event.key;
+
+    // Check if the pressed key matches any of the buttons
+    switch (keyPressed) {
+        case '0':
+            document.getElementById('button-0').click();
+            break;
+        case '1':
+            document.getElementById('button-1').click();
+            break;
+        case '2':
+            document.getElementById('button-2').click();
+            break;
+        case '3':
+            document.getElementById('button-3').click();
+            break;
+        case '4':
+            document.getElementById('button-4').click();
+            break;
+        case '5':
+            document.getElementById('button-5').click();
+            break;
+        case '6':
+            document.getElementById('button-6').click();
+            break;
+        case '7':
+            document.getElementById('button-7').click();
+            break;
+        case '8':
+            document.getElementById('button-8').click();
+            break;
+        case '9':
+            document.getElementById('button-9').click();
+            break;
+        case '+':
+            document.getElementById('button-plus').click();
+            break;
+        case '-':
+            document.getElementById('button-minus').click();
+            break;
+        case '*':
+            document.getElementById('button-multiply').click();
+            break;
+        case '/':
+            document.getElementById('button-divide').click();
+            break;
+        case '(':
+            document.getElementById('button-open-parenthesis').click();
+            break;
+        case ')':
+            document.getElementById('button-close-parenthesis').click();
+            break;
+        case '.':
+            document.getElementById('button-dot').click();
+            break;
+        case 'Enter':
+            document.getElementById('calculate').click();
+            break;
+        case 'Backspace':
+            document.getElementById('delete').click();
+            break;
+        case 'Escape':
+            document.getElementById('clear').click();
+            break;
+        default:
+            break;
+    }
+});
+
 

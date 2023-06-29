@@ -35,29 +35,28 @@
 
         <div id="calculator-buttons">
             <div class="button-row">
-                <button type="button" onclick="appendToExpression('7')">7</button>
-                <button type="button" onclick="appendToExpression('8')">8</button>
-                <button type="button" onclick="appendToExpression('9')">9</button>
-                <button type="button" onclick="appendToExpression('/')">÷</button>
+                <button type="button" id="button-7" onclick="appendToExpression('7')">7</button>
+                <button type="button" id="button-8" onclick="appendToExpression('8')">8</button>
+                <button type="button" id="button-9" onclick="appendToExpression('9')">9</button>
+                <button type="button" id="button-divide" onclick="appendToExpression('/')">÷</button>
             </div>
             <div class="button-row">
-                <button type="button" onclick="appendToExpression('4')">4</button>
-                <button type="button" onclick="appendToExpression('5')">5</button>
-                <button type="button" onclick="appendToExpression('6')">6</button>
-                <button type="button" onclick="appendToExpression('*')">×</button>
+                <button type="button" id="button-4" onclick="appendToExpression('4')">4</button>
+                <button type="button" id="button-5" onclick="appendToExpression('5')">5</button>
+                <button type="button" id="button-6" onclick="appendToExpression('6')">6</button>
+                <button type="button" id="button-multiply" onclick="appendToExpression('*')">×</button>
             </div>
             <div class="button-row">
-                <button type="button" onclick="appendToExpression('1')">1</button>
-                <button type="button" onclick="appendToExpression('2')">2</button>
-                <button type="button" onclick="appendToExpression('3')">3</button>
-                <button type="button" onclick="appendToExpression('-')">-</button>
+                <button type="button" id="button-1" onclick="appendToExpression('1')">1</button>
+                <button type="button" id="button-2" onclick="appendToExpression('2')">2</button>
+                <button type="button" id="button-3" onclick="appendToExpression('3')">3</button>
+                <button type="button" id="button-minus" onclick="appendToExpression('-')">-</button>
             </div>
             <div class="button-row">
-                <button type="button" onclick="appendToExpression('0')">0</button>
-
-                <button type="button" onclick="appendToExpression('(')">(</button>
-                <button type="button" onclick="appendToExpression(')')">)</button>
-                <button type="button" onclick="appendToExpression('+')">+</button>
+                <button type="button" id="button-0" onclick="appendToExpression('0')">0</button>
+                <button type="button" id="button-open-parenthesis" onclick="appendToExpression('(')">(</button>
+                <button type="button" id="button-close-parenthesis" onclick="appendToExpression(')')">)</button>
+                <button type="button" id="button-plus" onclick="appendToExpression('+')">+</button>
             </div>
             <div class="button-row">
                 <button type="reset" name="clear_error" id="clear_error" value="1" onclick="onClearError()">CE</button>
@@ -67,7 +66,7 @@
             </div>
             <div class="button-row">
 
-                <button type="button" onclick="deleteLastCharacter()">DEL</button>
+                <button type="button" id="delete" onclick="deleteLastCharacter()">DEL</button>
                 <button type="button" onclick="generateCSV('.')">CSV</button>
             </div>
             <section id="history">
