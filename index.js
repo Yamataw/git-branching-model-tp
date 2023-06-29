@@ -6,11 +6,21 @@ class Expression{
 }
 var results = []
 
+function updateExpressionResults() {
+    var expressionResultsElement = document.getElementById("history");
+    expressionResultsElement.innerHTML = ""; // Réinitialiser le contenu
 
+    results.forEach(function(expression) {
+        let expressionElement = document.createElement("p");
+        expressionElement.textContent = `${expression.expression} = ${expression.result}`;
+        expressionResultsElement.appendChild(expressionElement);
+    });
+}
 function onCalculate() {
     let expression = document.getElementById('expression').value;
     let current = new Expression(expression,eval(expression));
-    document.getElementById('result').innerHTML = current.result;
+    console.log(current.result);
+    document.getElementById('expression').value = current.result;
     results.push(current);
     updateExpressionResults()
 }
@@ -24,7 +34,6 @@ function onClear() {
 function onClearError() {
     if(results.length > 1) {
         document.getElementById('expression').value = results[results.length - 1].expression;
-        document.getElementById('result').value = results[results.length - 1].result;
         results.pop()
         updateExpressionResults()
     }
@@ -32,17 +41,19 @@ function onClearError() {
 }
 
 
-function updateExpressionResults() {
-    var expressionResultsElement = document.getElementById("history");
-    expressionResultsElement.innerHTML = ""; // Réinitialiser le contenu
 
-    results.forEach(function(expression) {
-        let expressionElement = document.createElement("p");
-        expressionElement.textContent = `${expression.expression} = ${expression.result}`;
-        expressionResultsElement.appendChild(expressionElement);
-    });
+function appendToExpression(val){
+    document.getElementById('expression').value += val
 }
+function deleteLastCharacter() {
+    let expressionInput = document.getElementById('expression');
+    let expression = expressionInput.value;
 
+    if (expression.length > 0) {
+        expression = expression.slice(0, -1);
+        expressionInput.value = expression;
+    }
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     let inputField = document.getElementById('expression');
