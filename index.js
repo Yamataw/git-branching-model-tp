@@ -26,6 +26,12 @@ document.addEventListener('DOMContentLoaded', function () {
         // Remove any non-digit, non-operator, non-parentheses, and non-decimal characters
         return input.replace(/[^0-9+\-*/().]/g, '');
     }
+
+    inputField.addEventListener("keyup", function(event) {
+            event.preventDefault();
+            if(event.key === "Enter") onCalculate();
+        });
+
 });
 
 
