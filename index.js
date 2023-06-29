@@ -12,6 +12,7 @@ function onCalculate() {
     let current = new Expression(expression,eval(expression));
     document.getElementById('result').innerHTML = current.result;
     results.push(current);
+    updateExpressionResults()
 }
 
 function onClear() {
@@ -21,12 +22,25 @@ function onClear() {
 }
 
 function onClearError() {
-    if(results.length > 2) {
+    if(results.length > 1) {
         document.getElementById('expression').value = results[results.length - 1].expression;
         document.getElementById('result').value = results[results.length - 1].result;
         results.pop()
+        updateExpressionResults()
     }
 
+}
+
+
+function updateExpressionResults() {
+    var expressionResultsElement = document.getElementById("history");
+    expressionResultsElement.innerHTML = ""; // Réinitialiser le contenu
+
+    results.forEach(function(expression) {
+        let expressionElement = document.createElement("p");
+        expressionElement.textContent = `${expression.expression} = ${expression.result}`;
+        expressionResultsElement.appendChild(expressionElement);
+    });
 }
 
 
