@@ -8,7 +8,7 @@ var results = []
 
 function updateExpressionResults() {
     var expressionResultsElement = document.getElementById("history");
-    expressionResultsElement.innerHTML = ""; // Réinitialiser le contenu
+    expressionResultsElement.innerHTML = "<b>Historique :</b>"; // Réinitialiser le contenu
 
     results.forEach(function(expression) {
         let expressionElement = document.createElement("p");

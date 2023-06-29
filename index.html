@@ -1,79 +1,90 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="">
-        <meta name="keywords" content="">
-        <meta name="author" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="index.js"></script>
-        <title>Démo Git workflow</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js"></script>
+    <title>Démo Git workflow</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
 
-    <body>
+<body>
+<header>
+    <h1>TP: Git workflow</h1>
+    <nav class="navbar">
+        <a href="#">Accueil</a>
+        <a href="#">À propos</a>
+    </nav>
+</header>
+
+<main>
+
+    <section>
         <header>
-            <h1>TP: Git workflow</h1>
-            <nav class="navbar">
-                <a href="#">Accueil</a>
-                <a href="#">À propos</a>
-            </nav>
+            <h2>Calculatrice en ligne</h2>
+            <p>Une application en ligne développée par Yamataw</p>
         </header>
+        <section class="input-section">
+            <label for="expression">Votre calcul :</label>
+            <input type="text" name="expression" id="expression" placeholder="0+1">
+        </section>
 
-        <main>
+        <div id="calculator-buttons">
+            <div class="button-row">
+                <button type="button" onclick="appendToExpression('7')">7</button>
+                <button type="button" onclick="appendToExpression('8')">8</button>
+                <button type="button" onclick="appendToExpression('9')">9</button>
+                <button type="button" onclick="appendToExpression('/')">÷</button>
+            </div>
+            <div class="button-row">
+                <button type="button" onclick="appendToExpression('4')">4</button>
+                <button type="button" onclick="appendToExpression('5')">5</button>
+                <button type="button" onclick="appendToExpression('6')">6</button>
+                <button type="button" onclick="appendToExpression('*')">×</button>
+            </div>
+            <div class="button-row">
+                <button type="button" onclick="appendToExpression('1')">1</button>
+                <button type="button" onclick="appendToExpression('2')">2</button>
+                <button type="button" onclick="appendToExpression('3')">3</button>
+                <button type="button" onclick="appendToExpression('-')">-</button>
+            </div>
+            <div class="button-row">
+                <button type="button" onclick="appendToExpression('0')">0</button>
 
-            <section>
-                <header>
-                    <h2>Calculatrice en ligne</h2>
-                    <p>Une application en ligne développée par Yamataw</p>
-                </header>
-                <label for="expression">Votre calcul :</label>
-                <input type="text" name="expression" id="expression" placeholder="0+1">
-                <div id="calculator-buttons">
-                    <div class="button-row">
-                        <button type="button" onclick="appendToExpression('7')">7</button>
-                        <button type="button" onclick="appendToExpression('8')">8</button>
-                        <button type="button" onclick="appendToExpression('9')">9</button>
-                        <button type="button" onclick="appendToExpression('/')">÷</button>
-                    </div>
-                    <div class="button-row">
-                        <button type="button" onclick="appendToExpression('4')">4</button>
-                        <button type="button" onclick="appendToExpression('5')">5</button>
-                        <button type="button" onclick="appendToExpression('6')">6</button>
-                        <button type="button" onclick="appendToExpression('*')">×</button>
-                    </div>
-                    <div class="button-row">
-                        <button type="button" onclick="appendToExpression('1')">1</button>
-                        <button type="button" onclick="appendToExpression('2')">2</button>
-                        <button type="button" onclick="appendToExpression('3')">3</button>
-                        <button type="button" onclick="appendToExpression('-')">-</button>
-                    </div>
-                    <div class="button-row">
-                        <button type="button" onclick="appendToExpression('0')">0</button>
-                        <button type="button" onclick="appendToExpression('.')">.</button>
-                        <button type="button" onclick="appendToExpression('(')">(</button>
-                        <button type="button" onclick="appendToExpression(')')">)</button>
-                        <button type="button" onclick="appendToExpression('+')">+</button>
-                        <button type="button" onclick="deleteLastCharacter()">DEL</button>
-                    </div>
-                </div>
-                <button type="reset" name="calculate" id="clear_error" value="1" onclick="onClearError()">CE</button>
-                <button type="button" name="calculate" id="clear" value="1" onclick="onClear()">C</button>
+                <button type="button" onclick="appendToExpression('(')">(</button>
+                <button type="button" onclick="appendToExpression(')')">)</button>
+                <button type="button" onclick="appendToExpression('+')">+</button>
+            </div>
+            <div class="button-row">
+                <button type="reset" name="clear_error" id="clear_error" value="1" onclick="onClearError()">CE</button>
+                <button type="button" name="clear" id="clear" value="1" onclick="onClear()">C</button>
+                <button type="button" onclick="appendToExpression('.')">.</button>
                 <button type="submit" name="calculate" id="calculate" value="1" onclick="onCalculate()">=</button>
-            </section>
+            </div>
+            <div class="button-row">
 
-
+                <button type="button" onclick="deleteLastCharacter()">DEL</button>
+                <button type="button" onclick="appendToExpression('.')">CSV</button>
+            </div>
             <section id="history">
+                <b>Historique :</b>
             </section>
+        </div>
 
-        </main>
+    </section>
 
 
 
-        <footer>
-            Le footer
-        </footer>
 
-    </body>
+</main>
+
+<footer>
+    Le footer
+</footer>
+</body>
 
 </html>
