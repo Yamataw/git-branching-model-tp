@@ -28,6 +28,8 @@ function onCalculate() {
 function onClear() {
     document.getElementById('expression').value = "";
     results = [];
+    updateExpressionResults()
+
 
 }
 
