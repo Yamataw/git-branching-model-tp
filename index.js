@@ -46,7 +46,7 @@ function convertToString(expressionObj) {
 }
 
 function generateCSV(){
-    if(results.length > 1) {
+    if(results.length > 0) {
         let headers = ['Expression', 'Result'];
         let csvContent = headers.join(';') + '\n';
         csvContent += results.map(convertToString).join('\n');
