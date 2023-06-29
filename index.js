@@ -1,7 +1,17 @@
+class Expression{
+    constructor(expression, result) {
+        this.expression = expression;
+        this.result = result;
+    }
+}
+var results = []
+
+
 function onCalculate() {
-    let expression = document.getElementById('expression').value
-    console.log(eval(expression))
-    document.getElementById('result').innerHTML = eval(expression)
+    let expression = document.getElementById('expression').value;
+    let current = new Expression(expression,eval(expression));
+    document.getElementById('result').innerHTML = current.result;
+    results.push(current);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
