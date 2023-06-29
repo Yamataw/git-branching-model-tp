@@ -20,6 +20,16 @@ function onClear() {
 
 }
 
+function onClearError() {
+    if(results.length > 2) {
+        document.getElementById('expression').value = results[results.length - 1].expression;
+        document.getElementById('result').value = results[results.length - 1].result;
+        results.pop()
+    }
+
+}
+
+
 document.addEventListener('DOMContentLoaded', function () {
     let inputField = document.getElementById('expression');
 

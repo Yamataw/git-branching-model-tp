@@ -30,7 +30,7 @@
                 </header>
 
                 <label for="expression">Votre calcul : </label><input type="text" name="expression" id="expression" placeholder="0+1">
-                <button type="reset" name="calculate" id="clear_error" value="1" onclick="">CE</button>
+                <button type="reset" name="calculate" id="clear_error" value="1" onclick="onClearError()">CE</button>
                 <button type="button" name="calculate" id="clear" value="1" onclick="onClear()">C</button>
                 <button type="submit" name="calculate" id="calculate" value="1" onclick="onCalculate()">Calculer</button> <span>=</span><span id="result" > ? </span>
             </section>
