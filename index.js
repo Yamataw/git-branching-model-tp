@@ -14,6 +14,12 @@ function onCalculate() {
     results.push(current);
 }
 
+function onClear() {
+    document.getElementById('expression').value = "";
+    results = [];
+
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     let inputField = document.getElementById('expression');
 
